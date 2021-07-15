@@ -1,0 +1,19 @@
+#服务器配置
+server:
+  port: 8080
+spring:
+  datasource: #数据源配置
+    type: com.alibaba.druid.pool.DruidDataSource #连接池的类型
+    url: jdbc:mysql://localhost:3306/goods_market_db?serverTimezone=GMT
+    driver-class-name: com.mysql.cj.jdbc.Driver #数据库的驱动程序类
+    username: root
+    password: 123456
+#mybatis的配置如下
+mybatis:
+  typeAliasesPackage:
+  configuration:
+    mapUnderscoreToCamelCase: true  #数据库表中的下划线自动转换成驼峰
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath：mybatis/mapper/*.xml   #mapper文件的路径，这个路径下面的mapper.xml会自动加载成mybatis映射文件
+
+

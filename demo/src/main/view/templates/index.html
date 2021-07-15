@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #goods_title:hover{
+            color: red;
+            cursor: pointer;
+        }
+        #loginBtn:hover{
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<!--头部-->
+<div style="display: flex;align-items: center">
+    <div style="width: 40%">
+        <img src="/images/index/logo.png">
+    </div>
+    <div style="width: 40%">
+        <div style="display: flex;border:solid #FF5B5C 2px">
+            <div style="width: 80%">
+                <input type="text" style="height: 30px;border: none;width: 100%">
+            </div>
+            <div style="color: white;background: #FF5B5C;padding: 5px 20px;width: 20%;text-align: center">
+                搜索
+            </div>
+        </div>
+
+    </div>
+    <div style="cursor: pointer;width: 20%;text-align:center;border: solid lightgray 1px;background: rgb(245,245,245);padding: 6px;color: #FF5B5C;margin-left: 30px">
+        我的购物车(10)
+    </div>
+    <div onclick="window.location='/pages/front/loginPage'" id="loginBtn" style="cursor: pointer;width: 50px;text-align:center;border: solid lightgray 1px;background: rgb(245,245,245);padding: 6px;margin-left: 30px">
+        登录
+    </div>
+
+</div>
+<!--商品-->
+<div style="display: flex">
+
+    
+    <div style="border: solid #FF5B5C;display: flex;padding: 20px 10px">
+
+        <div style="margin: 0px 50px 0px 0px;padding: 10px ;border: solid lightgray 1px;box-shadow: 0 0 5px lightgray;width: 33%"  th:each="x:${#numbers.sequence(1,2)}">
+            <div  style="overflow:hidden"><img  src="/images/index/phone.jpg"></div>
+            <div style="color: orangered">￥<span style="font-size: 20px"></span> 3699.00</div>
+            <div id="goods_title" >
+                华为 HUAWEI nova 8 Pro 4G 全网通 Vlog视频双镜头 120Hz环幕屏 66W华为超级快充8GB+128GB 普罗旺斯手机
+            </div>
+            <div style="color: #6a6da9;font-size: 12px;font-weight: bold">5+万<span style="color: gray;padding: 5px">条评价</span></div>
+            <div style="color: gray;font-size: 12px">纺大手机店</div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
